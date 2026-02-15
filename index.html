@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemonada:wght@300..700&family=Oi&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
+
+<title>Ramadan Mobarak🌙</title>
+</head>
+
+<body>
+
+    <div class="lantern-container right">
+    <div class="lantern">
+        <div class="lantern-handle"></div>
+        <div class="lantern-body"><div class="lantern-light"></div></div>
+    </div>
+</div>
+
+<div class="lantern-container left">
+    <div class="lantern">
+        <div class="lantern-handle"></div>
+        <div class="lantern-body"><div class="lantern-light"></div></div>
+    </div>
+</div>
+
+<header class="header">
+    <h1>رمضان مبارك 🌙</h1>
+</header>
+
+<section class="content">
+    <div class="card">
+        <p>ادخل الكود الخاص بك</p>
+
+        <form id="codeForm">
+            <input type="text" id="codeInput" placeholder="اكتب الكود هنا" required>
+            <button type="submit">تحقق</button>
+        </form>
+
+        <div id="hint"><span>😉</span> الكود: حاول تخمنه</div>
+        <div id="message"></div>
+    </div>
+</section>
+
+<script>
+const form = document.getElementById("codeForm");
+const input = document.getElementById("codeInput");
+const message = document.getElementById("message");
+const card = document.querySelector(".card");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if(input.value === "ramadan2026") {
+
+        message.textContent = "✨  كل سنة وانت طيب ✨";
+        message.style.color = "#5db97e";
+
+        // تأثير بسيط احتفالي (تكبير الكارد)
+        card.style.transform = "scale(1.05)";
+        setTimeout(() => {
+            card.style.transform = "scale(1)";
+        }, 300);
+
+    } else {
+
+        message.textContent = "❌ الكود غير صحيح حاول مرة تانية";
+        message.style.color = "red";
+
+        // هزة للكارد
+        card.classList.add("shake");
+
+        setTimeout(() => {
+            card.classList.remove("shake");
+        }, 500);
+    }
+});
+
+
+</script>
+
+</body>
+</html>
